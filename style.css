@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;500;700&family=Rubik:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
+
+*, *::after, *::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Rubik' sans-serif;
+}
+
+:root {
+  /* colors  */
+ --neutral-1: hsl(226, 43%, 10%);
+ --neutral-2:hsl(235, 46%, 20%);
+ --neutral-3: hsl(235, 45%, 61%);
+ --neutral-4: hsl(236, 100%, 87%);
+
+  --avatar: hsl(246, 80%, 60%);
+  --orange: hsl(15, 100%, 70%);
+  --cyan: hsl(195, 74%, 62%);
+  --red: hsl(348, 100%, 68%);
+  --green: hsl(145, 58%, 55%);
+  --purple: hsl(264, 64%, 52%);
+  --yellow: hsl(43, 84%, 65%);
+
+  /* templates for cards  */
+
+  --bg: var(--neutral-2);
+  --time: 200ms;
+  --ease: ease-in-out;
+  --snap: cubic-bezier(0.72, -0.12, 0.24, 1.14);
+
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--neutral-1);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-content: center;
+}
+
+
+.card {
+  background-color: var(--bg);
+  border-radius: 1rem;
+}
+
+
+.card > div {
+  background-color: var(--bg);
+}
+
+
+
+.card--avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--neutral-2);
+  border-radius: 1rem;
+}
+
+.card--lg {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+
+.card--avatar-top {
+  display: flex;
+  align-items: center;
+  --bg: var(--avatar);
+  gap: 1rem;
+}
+
+
+.avatar {
+  max-width: clamp(5rem, 7vw, 7.5rem);
+  border: .2rem solid #fff;
+  border-radius: 100vw;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  flex: 1 1 20%;
+}
+
+h1 {
+ flex: 1 1 50%;
+ font-size: 1.2rem;
+ font-weight: 300;
+ --txt: var(--neutral-2);
+}
+
+
+h1 > span {
+  font-size: .8rem;
+  color: var(--neutral-4);
+}
+
+
+.card--sm {
+  padding: 1rem .5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+}
+
+.card--avatar .card--sm {
+  padding: 1rem .5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+
+.timecard .card--sm {
+  padding: 1rem .5rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+
+.card--avatar-bottom {
+  --bg: var(--neutral-2)
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+}
+
+.timecard {
+  --bg: var(--orange);
+}
+
+.btn {
+  font: inherit;
+  background: inherit;
+  border: none;
+  color: var(--neutral-3);
+  flex: 1 1 100%;
+  border-radius: .5rem;
+  padding: .2rem .8rem;
+  cursor: pointer;
+  transition:
+  box-shadow var(--time) var(--snap),
+  color var(--time) var(--ease);
+  box-shadow:
+  0 0 0 -.5rem var(--bg),
+  0 0 0 -.5rem var(--avatar);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-within {
+  box-shadow:
+  0 0 0 .1rem var(--bg),
+  0 0 0 .4rem var(--avatar);
+}
+
+.btn:where(.active, :hover, :focus-within) {
+  color: #fff;
+}

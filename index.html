@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card card--avatar">
+        <div class="card--avatar-top card--lg">
+          <img class="avatar" src="images/image-jeremy.png" alt="picture" />
+          <h1>
+            <span>Report for</span><br />
+            Jeremy Robson
+          </h1>
+        </div>
+        <div class="card--avatar-bottom card--sm">
+          <button class="btn">Daily</button>
+          <button class="btn">Weekly</button>
+          <button class="btn active">Monthly</button>
+        </div>
+      </div>
+      <div class="container--timecards">
+      <div class="card timecard timecard-work">
+        <div class="card--sm"></div>
+        <div class="timecard--bottom card--lg">
+          <div class="tmecard--title">
+            <h2>work</h2>
+            <button class="btn">
+              <svg
+                aria-hidden="true"
+                width="21"
+                height="5"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z"
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="timecard-amt">
+            <p class="current">5hrs</p>
+            <p class="previous">Yesterday - 7hrs</p>
+          </div>
+         </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>
