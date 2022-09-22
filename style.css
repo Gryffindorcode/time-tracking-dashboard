@@ -73,11 +73,6 @@ body {
   border-radius: 1rem;
 }
 
-.card--lg {
-  border-radius: 1rem;
-  padding: 1rem;
-}
-
 
 .card--avatar-top {
   display: flex;
@@ -110,12 +105,7 @@ h1 > span {
 }
 
 
-.card--sm {
-  padding: 1rem .5rem;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
 
-}
 
 .card--avatar .card--sm {
   padding: 1rem .5rem;
@@ -123,31 +113,103 @@ h1 > span {
   border-bottom-right-radius: 1rem;
 }
 
-
-.timecard .card--sm {
-  padding: 1rem .5rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
-}
-
-
 .card--avatar-bottom {
-  --bg: var(--neutral-2)
-  display: flex;
+  --bg: var(--neutral-2) display: flex;
   justify-content: center;
   align-items: center;
   gap: .5rem;
 }
 
-.timecard {
+.card--lg {
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.timecard .card--lg {
+  --bg: var(--neutral-2);
+  cursor: pointer;
+}
+
+.timecard .card--lg:hover {
+  --bg: var(--neutral-3);
+  cursor: pointer;
+}
+
+.card--sm {
+  padding: 1rem .5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+
+}
+
+.timecard .card--sm {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+
+.timecard--top {
+  position: relative;
+  overflow: hidden;
+}
+
+.icon {
+  position: absolute;
+  top: -.5rem;
+  right: .8rem;
+}
+
+
+.timecard--bottom {
+  display: grid;
+  position: relative;
+  gap: clamp(.5rem, 2vw, 2rem);
+}
+
+.timecard-work {
   --bg: var(--orange);
 }
+
+.timecard--title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.timecard--amt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.current {
+  font-size: 1.7rem;
+  font-weight: 300;
+}
+
+.previous {
+  font-size: .7rem;
+  font-weight: 300;
+  color: var(--neutral-4);
+}
+
+
+h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+
+.timecard--title .btn {
+ flex: 0 1 0%;
+}
+
 
 .btn {
   font: inherit;
   background: inherit;
   border: none;
-  color: var(--neutral-3);
+  color: var(--neutral-4);
   flex: 1 1 100%;
   border-radius: .5rem;
   padding: .2rem .8rem;
@@ -164,7 +226,7 @@ h1 > span {
   outline: none;
 }
 
-.btn:focus-within {
+.btn:focus-visible {
   box-shadow:
   0 0 0 .1rem var(--bg),
   0 0 0 .4rem var(--avatar);
