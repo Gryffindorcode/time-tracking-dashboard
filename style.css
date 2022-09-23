@@ -7,17 +7,24 @@
 }
 
 body {
-  font-family: 'Rubik' sans-serif;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--neutral-1);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 1rem;
 }
 
 :root {
-  /* colors  */
- --neutral-1: hsl(226, 43%, 10%);
- --neutral-2:hsl(235, 46%, 20%);
- --neutral-3: hsl(235, 45%, 61%);
- --neutral-4: hsl(236, 100%, 87%);
+  /* colors */
+  --neutral-1: hsl(226, 43%, 10%);
+  --neutral-2: hsl(235, 46%, 20%);
+  --neutral-3: hsl(235, 45%, 61%);
+  --neutral-4: hsl(236, 100%, 87%);
 
   --avatar: hsl(246, 80%, 60%);
+
   --orange: hsl(15, 100%, 70%);
   --cyan: hsl(195, 74%, 62%);
   --red: hsl(348, 100%, 68%);
@@ -25,99 +32,69 @@ body {
   --purple: hsl(264, 64%, 52%);
   --yellow: hsl(43, 84%, 65%);
 
-  /* templates for cards  */
-
+  /* templating for cards */
   --bg: var(--neutral-2);
   --time: 200ms;
   --ease: ease-in-out;
   --snap: cubic-bezier(0.72, -0.12, 0.24, 1.14);
-
 }
 
-body {
-  font-family: 'Rubik', sans-serif;
-  background-color: var(--neutral-1);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  padding: 1rem;
-}
 
 .container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: clamp(1rem, 3vw, 2rem);
-  justify-content: center;
 }
 
+.container--timecards {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+}
 
 .card {
   background-color: var(--bg);
   border-radius: 1rem;
 }
 
-
-.card > div {
+.card>div {
   background-color: var(--bg);
 }
-
-
 
 .card--avatar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--neutral-2);
-  border-radius: 1rem;
+  flex: 1 1 10%;
 }
-
 
 .card--avatar-top {
-  display: flex;
-  align-items: center;
   --bg: var(--avatar);
+  flex: 1 1 80%;
+  display: flex;
   gap: 1rem;
+  align-items: center;
 }
 
-
 .avatar {
-  max-width: clamp(5rem, 7vw, 7.5rem);
+  width: clamp(4rem, 4vw, 7.5rem);
   border: .2rem solid #fff;
   border-radius: 100vw;
   aspect-ratio: 1/1;
   object-fit: cover;
-  flex: 1 1 20%;
+  flex: 0 1 20%;
 }
 
 h1 {
- flex: 1 1 50%;
- font-size: 1.2rem;
- font-weight: 300;
- --txt: var(--neutral-2);
+  flex: 1 1 50%;
+  font-size: 1.2rem;
+  font-weight: 300;
+  --txt: var(--neutral-2);
 }
 
-
-h1 > span {
+h1>span {
   font-size: .8rem;
   color: var(--neutral-4);
-}
-
-
-
-
-.card--avatar .card--sm {
-  padding: 1rem .5rem;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-
-.card--avatar-bottom {
-  --bg: var(--neutral-2) display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: .5rem;
 }
 
 .card--lg {
@@ -127,26 +104,31 @@ h1 > span {
 
 .timecard .card--lg {
   --bg: var(--neutral-2);
-  cursor: pointer;
-}
-
-.timecard .card--lg:hover {
-  --bg: var(--neutral-3);
-  cursor: pointer;
 }
 
 .card--sm {
   padding: 1rem .5rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+}
 
+.card--avatar .card--sm {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.card--avatar-bottom {
+  --bg: var(--neutral-2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
 }
 
 .timecard .card--sm {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-
 
 .timecard--top {
   position: relative;
@@ -155,71 +137,87 @@ h1 > span {
 
 .icon {
   position: absolute;
-  top: -.5rem;
+  top: -.8rem;
   right: .8rem;
 }
 
-
 .timecard--bottom {
-  display: grid;
   position: relative;
+  display: grid;
   gap: clamp(.5rem, 2vw, 2rem);
-}
-
-.timecard-work {
-  --bg: var(--orange);
 }
 
 .timecard--title {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .timecard--amt {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .current {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 300;
 }
 
 .previous {
-  font-size: .7rem;
+  font-size: .8rem;
   font-weight: 300;
   color: var(--neutral-4);
 }
-
 
 h2 {
   font-size: 1rem;
   font-weight: 400;
 }
 
-
 .timecard--title .btn {
- flex: 0 1 0%;
+  flex: 0 1 0%;
 }
 
+.timecard-work {
+  --bg: var(--orange);
+}
+
+.timecard-play {
+  --bg: var(--cyan);
+}
+
+.timecard-study {
+  --bg: var(--red);
+}
+
+.timecard-exercise {
+  --bg: var(--green);
+}
+
+.timecard-social {
+  --bg: var(--purple);
+}
+
+.timecard-selfcare {
+  --bg: var(--yellow);
+}
 
 .btn {
   font: inherit;
   background: inherit;
   border: none;
-  color: var(--neutral-4);
+  color: var(--neutral-3);
   flex: 1 1 100%;
   border-radius: .5rem;
   padding: .2rem .8rem;
   cursor: pointer;
-  transition:
-  box-shadow var(--time) var(--snap),
-  color var(--time) var(--ease);
   box-shadow:
-  0 0 0 -.5rem var(--bg),
-  0 0 0 -.5rem var(--avatar);
+    0 0 0 -.5rem var(--bg),
+    0 0 0 -.5rem var(--avatar);
+  transition:
+    box-shadow var(--time) var(--snap),
+    color var(--time) var(--ease);
 }
 
 .btn:focus {
@@ -228,10 +226,43 @@ h2 {
 
 .btn:focus-visible {
   box-shadow:
-  0 0 0 .1rem var(--bg),
-  0 0 0 .4rem var(--avatar);
+    0 0 0 .1rem var(--bg),
+    0 0 0 .4rem var(--avatar);
 }
 
 .btn:where(.active, :hover, :focus-within) {
   color: #fff;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .container--timecards {
+    flex: 1 1 80%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card--avatar-top {
+    flex-wrap: wrap;
+    align-items: start;
+    align-content: start;
+    padding: 4rem 1rem;
+    gap: 2rem;
+  }
+
+  h1 {
+    flex: 1 1 100%;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container--timecards {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
